@@ -1,15 +1,14 @@
-from operator import truediv
-from turtle import back
 from urllib import response
 from PIL import Image, ImageDraw, ImageFont
 import requests
 import json
 import textwrap
 from pexels_api import API
-import shutil
 from io import BytesIO
 import time
 import random
+
+print("Collecting Image Data...")
 
 PEXELS_API_KEY = '563492ad6f91700001000001ccee9913e3b94277ba5cb2b2d4b27e28'
 api = API(PEXELS_API_KEY)
@@ -21,7 +20,7 @@ image = random.randint(0, 49)
 background = photos[image].original
 img_data = requests.get(background)
 
-
+print("Selecting a Quote...")
 time.sleep(5)
 result = requests.get('https://zenquotes.io/api/random')
 response = json.loads(result.text)
@@ -51,3 +50,5 @@ draw.text(xy=(300, 300), font=font, text=quote, fill='#FFFFFF')
 title = random.randint(1, 1000)
 
 img.save(str(title)+'.jpg')
+
+print("Done!")
