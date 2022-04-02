@@ -21,7 +21,6 @@ background = photos[image].original
 img_data = requests.get(background)
 
 print("Selecting a Quote...")
-time.sleep(5)
 result = requests.get('https://zenquotes.io/api/random')
 response = json.loads(result.text)
 quote = response[0]['q']
