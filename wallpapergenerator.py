@@ -5,7 +5,6 @@ import json
 import textwrap
 from pexels_api import API
 from io import BytesIO
-import time
 import random
 
 print("Collecting Image Data...")
